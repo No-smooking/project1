@@ -131,7 +131,7 @@
 				const sel_color = $('.color').val()
 				const sel_size = $('.size').val()
 				const qty = $('.amount').val()
-				const gh = $('.empty').text()
+				const cart = $('.empty').text()
 				var slsp = parseInl(qty);
 				if(sel_color == ""){
 					$('.compare').text('vui lòng chon Color')
@@ -141,14 +141,25 @@
 					$('.compare').text('')
 					$('.empty').text(slsp);
 				}
+				if(TONG += slsp){
+					$('.empty').text(TONG);
+				}
 			})
-			// $('button#remove').remove(function(){
-			// 	const qty = $('.amount').val()
-
-			// 	if(qty == 0 ){
-			// 		$('.error').text('')
-			// 	}
-			// })
+			$('button#remove').click(function(){
+				const qty = $('.amount').val()
+				const cart = $('.empty').text()
+				var slsp = parseInl(qty);
+				if(cart == 0){
+					$('.compare').text('Không có sp để xóa')
+				
+				}else if(cart < slsp){
+					$('.compare').text('không thể xóa sp')
+				}
+				
+				else{
+					$('.empty').text(cart - slsp);
+				}
+			})
 		})
 	</script>
 	<div class="product">
