@@ -132,7 +132,7 @@
 				const sel_size = $('.size').val()
 				const qty = $('.amount').val()
 				const gh = $('.empty').text()
-				var tong = gh + qty;
+				var slsp = parseInl(qty);
 				if(sel_color == ""){
 					$('.compare').text('vui lòng chon Color')
 				}else if(sel_size == ""){
@@ -140,19 +140,6 @@
 				}else{
 					$('.compare').text('')
 					$('.empty').text(qty)
-				}
-
-				// lấy text qty đưa lên giở hàng
-				
-
-				if(gh > qty){
-					for(TONG = 1; TONG >= 1 ; TONG++){
-					if(TONG == TONG + qty){
-						$('.empty').text(TONG);
-						return TONG;
-					}
-
-				}
 				}
 			})
 			// $('button#remove').remove(function(){
